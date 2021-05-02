@@ -25,7 +25,7 @@ services:
       - ./data/nginx/html:/usr/share/nginx/html
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email ditoraharjo@gmail.com --agree-tos --no-eff-email --staging -d ditoraharjo.me
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email ditoraharjo@gmail.com --agree-tos --no-eff-email --force-renewal -d ditoraharjo.me
 
 networks:
   dito-net:
