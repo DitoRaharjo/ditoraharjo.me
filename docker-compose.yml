@@ -19,14 +19,13 @@ services:
   certbot:
     container_name: certbot
     image: certbot/certbot
-    restart: unless-stopped
     volumes:
       - ~/nginx-ssl/certbot/conf:/etc/letsencrypt
       - ~/nginx-ssl/certbot/www:/var/www/certbot
       - ./data/nginx/html:/usr/share/nginx/html
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email ditoraharjo@gmail.com --agree-tos --no-eff-email --staging -d ditoraharjo.me  -d www.ditoraharjo.me
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html --email ditoraharjo@gmail.com --agree-tos --no-eff-email --staging -d ditoraharjo.me
 
 networks:
   dito-net:
